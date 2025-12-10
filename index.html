@@ -39,7 +39,7 @@
     overflow-x: hidden;
   }
 
-  /* ===== شريط التنقل العلوي الجديد - تعديل الحجم ===== */
+  /* ===== شريط التنقل العلوي الجديد ===== */
   .top-quick-nav {
     position: fixed;
     top: 0;
@@ -48,7 +48,7 @@
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     z-index: 9999;
-    padding: 10px 0; /* تصغير الـ padding */
+    padding: 15px 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     border-bottom: 3px solid var(--primary-color);
   }
@@ -56,16 +56,16 @@
   .top-nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px; /* تصغير الـ padding */
+    padding: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px; /* تصغير الـ gap */
+    gap: 10px;
     flex-wrap: wrap;
   }
 
   .top-nav-item {
-    padding: 8px 16px; /* تصغير الـ padding */
+    padding: 10px 20px;
     background: var(--primary-light);
     border-radius: 30px;
     color: var(--primary-color);
@@ -73,10 +73,10 @@
     cursor: pointer;
     transition: var(--transition);
     border: 2px solid transparent;
-    font-size: 0.85rem; /* تصغير حجم الخط */
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
-    gap: 6px; /* تصغير الـ gap */
+    gap: 8px;
     white-space: nowrap;
   }
 
@@ -94,10 +94,10 @@
   }
 
   .nav-icon {
-    font-size: 0.9rem !important; /* تصغير حجم الأيقونات */
+    font-size: 1.1rem;
   }
 
-  /* تعديل هيدر الرئيسي ليتناسب مع شريط التنقل الأصغر */
+  /* ===== التعديل على الهيدر الرئيسي ===== */
   header {
     background: 
       linear-gradient(rgba(0, 102, 51, 0.85), rgba(0, 82, 41, 0.9)),
@@ -105,7 +105,7 @@
     background-size: cover;
     background-position: center;
     color: var(--white);
-    padding: 110px 20px 100px; /* تصغير الـ padding العلوي */
+    padding: 120px 20px 100px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -114,7 +114,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 50px; /* تصغير الـ margin ليتناسب مع الشريط الأصغر */
+    margin-top: 60px;
   }
 
   header::before {
@@ -1075,10 +1075,14 @@
 
   .preview-id {
     width: 100%;
-    height: 250px;
+    height: 280px;
     border-radius: 16px;
-    margin: 30px 0;
+    margin: 30px auto;
     box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #333;
+    background: linear-gradient(135deg, #000000, #333333);
   }
 
   .preview-details {
@@ -1370,6 +1374,27 @@
     background: linear-gradient(135deg, #e55a00, #d14a00);
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(255, 102, 0, 0.3);
+  }
+
+  /* زر الإغلاق في المعاينة */
+  .close-preview-btn {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .close-preview-btn:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
   }
 
   /* تصميم CTA */
@@ -1981,31 +2006,93 @@
     transform: translateY(-2px);
   }
 
+  /* قسم رفع شعار الجامعة */
+  .university-logo-upload {
+    border: 3px dashed #b8dec8;
+    border-radius: var(--radius);
+    padding: 30px 20px;
+    text-align: center;
+    background: rgba(217, 237, 226, 0.1);
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 25px;
+  }
+
+  .university-logo-upload:hover {
+    border-color: var(--primary-color);
+    background: rgba(217, 237, 226, 0.2);
+  }
+
+  .university-logo-upload i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  .university-logo-upload p {
+    color: var(--text-light);
+    margin-bottom: 10px;
+  }
+
+  .university-logo-upload span {
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+
+  .logo-preview {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .logo-preview img {
+    max-width: 200px;
+    max-height: 100px;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .remove-logo-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: var(--transition);
+  }
+
+  .remove-logo-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+  }
+
   /* تصميم للموبايل */
   @media (max-width: 768px) {
     .top-quick-nav {
-      padding: 8px 0; /* تصغير أكثر للجوال */
+      padding: 10px 0;
     }
     
     .top-nav-container {
-      padding: 0 8px; /* تصغير أكثر للجوال */
-      gap: 4px; /* تصغير أكثر للجوال */
+      padding: 0 10px;
+      gap: 5px;
     }
     
     .top-nav-item {
-      padding: 6px 12px; /* تصغير أكثر للجوال */
-      font-size: 0.75rem; /* تصغير أكثر للجوال */
-      gap: 4px; /* تصغير أكثر للجوال */
+      padding: 8px 15px;
+      font-size: 0.8rem;
     }
     
     .nav-icon {
-      font-size: 0.8rem !important; /* تصغير أكثر للجوال */
+      font-size: 0.9rem;
     }
     
     header {
       padding: 100px 20px 80px;
       min-height: 400px;
-      margin-top: 45px; /* تصغير الـ margin للجوال */
+      margin-top: 50px;
     }
     
     .palestine-flag {
@@ -2159,6 +2246,15 @@
       font-size: 0.9rem !important;
       margin-left: 6px;
     }
+
+    .preview-actions {
+      flex-direction: column;
+    }
+
+    .close-preview-btn {
+      width: 100%;
+      justify-content: center;
+    }
   }
 </style>
 </head>
@@ -2166,7 +2262,7 @@
 <!-- شريط التقدم -->
 <div class="progress-bar" id="progressBar"></div>
 
-<!-- شريط التنقل العلوي الجديد - بحجم أصغر -->
+<!-- شريط التنقل العلوي الجديد -->
 <div class="top-quick-nav">
   <div class="top-nav-container">
     <div class="top-nav-item active" onclick="scrollToSection('header')">
@@ -2279,8 +2375,6 @@
   
   <div class="logo">Palestine Digital ID</div>
 </header>
-
-<!-- باقي الكود يبقى كما هو بدون تغيير... -->
 
 <div class="container">
   <!-- قسم الطلب السريع -->
@@ -3116,7 +3210,7 @@
             <span class="small-icon" onclick="document.getElementById('university').focus()">🏛️</span>
             الجامعة
           </label>
-          <select id="university">
+          <select id="university" onchange="updateColleges()">
             <option value="">اختر جامعتك</option>
             <option value="quds">القدس المفتوحة</option>
             <option value="najah">جامعة النجاح الوطنية</option>
@@ -3135,7 +3229,10 @@
             <span class="small-icon" onclick="document.getElementById('college').focus()">🎓</span>
             الكلية
           </label>
-          <input type="text" id="college" placeholder="مثال: كلية الهندسة والتكنولوجيا">
+          <select id="college">
+            <option value="">اختر الكلية</option>
+            <!-- سيتم تعبئة الكليات ديناميكيًا -->
+          </select>
         </div>
         
         <div class="form-group">
@@ -3143,7 +3240,10 @@
             <span class="small-icon" onclick="document.getElementById('major').focus()">📚</span>
             التخصص
           </label>
-          <input type="text" id="major" placeholder="مثال: هندسة الحاسب الآلي">
+          <select id="major">
+            <option value="">اختر التخصص</option>
+            <!-- سيتم تعبئة التخصصات ديناميكيًا -->
+          </select>
         </div>
         
         <div class="form-group">
@@ -3236,6 +3336,21 @@
         </div>
       </div>
       
+      <!-- قسم رفع شعار الجامعة -->
+      <div class="university-logo-upload" onclick="document.getElementById('universityLogoUpload').click()">
+        <i>🏛️</i>
+        <p>انقر لرفع شعار جامعتك المخصص</p>
+        <p>الصيغ المقبولة: JPG, PNG, SVG - الحجم الأقصى: 2MB</p>
+        <span>أو اسحب وأفلت الشعار هنا</span>
+      </div>
+      <input type="file" id="universityLogoUpload" accept="image/*" style="display: none;" onchange="handleUniversityLogoUpload(event)">
+      
+      <div id="universityLogoPreview" class="logo-preview" style="display: none;">
+        <img id="previewUniversityLogo" src="#" alt="Preview">
+        <button type="button" class="remove-logo-btn" onclick="removeUniversityLogo()">إزالة الشعار</button>
+      </div>
+      
+      <!-- قسم رفع الصورة الشخصية -->
       <div class="upload-area" onclick="document.getElementById('photoUpload').click()">
         <i>📷</i>
         <p>انقر لرفع صورتك الشخصية</p>
@@ -3246,6 +3361,7 @@
       
       <div id="uploadPreview" style="display: none; text-align: center; margin: 20px 0;">
         <img id="previewImage" src="#" alt="Preview" style="max-width: 200px; max-height: 250px; border-radius: 10px; border: 2px solid var(--primary-color);">
+        <button type="button" class="remove-logo-btn" onclick="removePhoto()" style="display: block; margin: 10px auto;">إزالة الصورة</button>
       </div>
       
       <div class="form-group">
@@ -3372,6 +3488,10 @@
     
     <div class="preview-actions">
       <button class="btn btn-secondary" onclick="closePreview()">رجوع للتعديل</button>
+      <button class="close-preview-btn" onclick="closePreview()">
+        <i>✖️</i>
+        إغلاق المعاينة
+      </button>
       <button class="btn btn-success" onclick="confirmOrder()">✅ تأكيد الطلب والدفع</button>
     </div>
     
@@ -3404,7 +3524,144 @@
   let currentQuantity = 1;
   let selectedDesign = '';
   let selectedPrinting = '';
+  let uploadedPhoto = null;
+  let uploadedUniversityLogo = null;
   
+  // بيانات الكليات والتخصصات
+  const collegesData = {
+    'quds': [
+      'كلية الهندسة والتكنولوجيا',
+      'كلية العلوم الإدارية والاقتصادية',
+      'كلية الآداب',
+      'كلية العلوم التربوية',
+      'كلية الزراعة'
+    ],
+    'najah': [
+      'كلية الطب وعلوم الصحة',
+      'كلية الهندسة وتكنولوجيا المعلومات',
+      'كلية العلوم',
+      'كلية الاقتصاد والعلوم الإدارية',
+      'كلية الشريعة',
+      'كلية الفنون'
+    ],
+    'birzeit': [
+      'كلية الهندسة والتكنولوجيا',
+      'كلية العلوم',
+      'كلية التجارة والاقتصاد',
+      'كلية الآداب',
+      'كلية الحقوق والإدارة العامة'
+    ],
+    'bethlehem': [
+      'كلية الآداب',
+      'كلية العلوم',
+      'كلية إدارة الأعمال',
+      'كلية التمريض والعلوم الصحية',
+      'كلية التربية'
+    ],
+    'hebron': [
+      'كلية الهندسة والتكنولوجيا',
+      'كلية العلوم',
+      'كلية الشريعة',
+      'كلية الزراعة',
+      'كلية التربية'
+    ],
+    'polytechnic': [
+      'كلية الهندسة والتكنولوجيا',
+      'كلية العلوم التطبيقية',
+      'كلية تكنولوجيا المعلومات',
+      'كلية الإدارة والعلوم الإنسانية'
+    ],
+    'arab': [
+      'كلية الهندسة وتكنولوجيا المعلومات',
+      'كلية الطب',
+      'كلية العلوم الطبية المساعدة',
+      'كلية الآداب والعلوم'
+    ],
+    'alaqsa': [
+      'كلية العلوم والتكنولوجيا',
+      'كلية الآداب والعلوم الإنسانية',
+      'كلية التربية',
+      'كلية التجارة والاقتصاد'
+    ],
+    'other': [
+      'كلية الهندسة والتكنولوجيا',
+      'كلية العلوم',
+      'كلية الآداب',
+      'كلية الاقتصاد والعلوم الإدارية',
+      'كلية التربية',
+      'كلية أخرى'
+    ]
+  };
+
+  const majorsData = {
+    'quds': [
+      'هندسة الحاسب',
+      'الهندسة المدنية',
+      'إدارة الأعمال',
+      'اللغة العربية',
+      'التربية الخاصة'
+    ],
+    'najah': [
+      'الطب البشري',
+      'هندسة الحاسوب',
+      'الكيمياء',
+      'المحاسبة',
+      'الشريعة الإسلامية'
+    ],
+    'birzeit': [
+      'هندسة الكهرباء',
+      'الفيزياء',
+      'التسويق',
+      'العلوم السياسية',
+      'القانون'
+    ],
+    'bethlehem': [
+      'اللغة الإنجليزية',
+      'الرياضيات',
+      'المالية',
+      'التمريض',
+      'التعليم الابتدائي'
+    ],
+    'hebron': [
+      'هندسة الميكاترونكس',
+      'الأحياء',
+      'العلوم الإسلامية',
+      'الزراعة',
+      'التربية الرياضية'
+    ],
+    'polytechnic': [
+      'هندسة البرمجيات',
+      'تكنولوجيا المعلومات',
+      'الفيزياء التطبيقية',
+      'إدارة المشاريع'
+    ],
+    'arab': [
+      'هندسة الاتصالات',
+      'الطب العام',
+      'الصيدلة',
+      'اللغة الإنجليزية'
+    ],
+    'alaqsa': [
+      'علوم الحاسوب',
+      'الرياضيات',
+      'التاريخ',
+      'التربية'
+    ],
+    'other': [
+      'التخصص العام',
+      'التخصص المختار'
+    ]
+  };
+
+  // شعارات الجامعات الافتراضية
+  const universityLogos = {
+    'quds': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDBDNy4xNjQgMCAwIDcuMTY0IDAgMTZzNy4xNjQgMTYgMTYgMTZzMTYtNy4xNjQgMTYtMTZTMjQuODM2IDAgMTYgMHoiIGZpbGw9IiMwMDY2MzMiLz4KPHBhdGggZD0iTTE2IDhMMjQgMTZIMTZ2OEg4VjE2SDE2Vjh6IiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIGQ9Ik0xNiA4djhoOHY4aDh2LThoOHYtOEgxNnoiIGZpbGw9IiNGRjY2MDAiLz4KPC9zdmc+',
+    'najah': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMyQzNFNTAiLz4KPHBhdGggZD0iTTggMTZoMTZ2M0g4di0zem0wLTNoMTZ2M0g4di0zem0wIDloMTZ2M0g4di0zeiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCBkPSJNMTMgMTZoNnY5aC02di05eiIgZmlsbD0iI0ZGNjYwMCIvPgo8L3N2Zz4=',
+    'birzeit': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDBDNy4xNjQgMCAwIDcuMTY0IDAgMTZzNy4xNjQgMTYgMTYgMTZzMTYtNy4xNjQgMTYtMTZTMjQuODM2IDAgMTYgMHoiIGZpbGw9IiNGRjY2MDAiLz4KPHBhdGggZD0iTTggOGgxNnYxNkg4Vjh6bTQgNGg4djhoLTh2LTh6IiBmaWxsPSIjRkZGRkZGIi8+Cjwvc3ZnPg==',
+    'bethlehem': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDBDNy4xNjQgMCAwIDcuMTY0IDAgMTZzNy4xNjQgMTYgMTYgMTZzMTYtNy4xNjQgMTYtMTZTMjQuODM2IDAgMTYgMHoiIGZpbGw9IiNGRkYxMDAiLz4KPHBhdGggZD0iTTE2IDZoNHYyMGgtNFY2em0tNCA2aDR2MTRoLTJWMTR6bTggMGg0djE0aC0yVjE0eiIgZmlsbD0iIzAwNjYzMyIvPgo8L3N2Zz4=',
+    'default': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwMDY2MzMiLz4KPHBhdGggZD0iTTEwIDExaDEydjEwSDEwVjExem0yIDJoOHY2aC04di02eiIgZmlsbD0iI0ZGRkZGRiIvPgo8L3N2Zz4='
+  };
+
   // تهيئة الصفحة
   document.addEventListener('DOMContentLoaded', function() {
     // تحديث سنة حقوق النشر
@@ -3418,6 +3675,17 @@
     
     // تهيئة الأسئلة الشائعة
     initFAQ();
+    
+    // تهيئة أحداث select للكليات والتخصصات
+    const universitySelect = document.getElementById('university');
+    if (universitySelect) {
+      universitySelect.addEventListener('change', updateColleges);
+    }
+    
+    const collegeSelect = document.getElementById('college');
+    if (collegeSelect) {
+      collegeSelect.addEventListener('change', updateMajors);
+    }
   });
   
   // التعامل مع التمرير
@@ -3478,7 +3746,7 @@
   function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerOffset = 60; // تصغير الـ offset ليتناسب مع الشريط الأصغر
+      const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       
@@ -3588,7 +3856,9 @@
     const designs = {
       'classic': 'الكلاسيكي الفلسطيني',
       'premium': 'البريميوم الفلسطيني',
-      'golden': 'الذهبي المميز'
+      'elegant': 'أنيق عصري',
+      'golden': 'الذهبي المميز',
+      'custom': 'تصميم مخصص'
     };
     return designs[designType] || designType;
   }
@@ -3612,6 +3882,106 @@
     return printings[printingType] || printingType;
   }
   
+  // تحديث الكليات بناءً على الجامعة المختارة
+  function updateColleges() {
+    const universitySelect = document.getElementById('university');
+    const collegeSelect = document.getElementById('college');
+    const university = universitySelect.value;
+    
+    // تفريغ قائمة الكليات
+    collegeSelect.innerHTML = '<option value="">اختر الكلية</option>';
+    
+    if (university && collegesData[university]) {
+      // إضافة الكليات المتاحة للجامعة المختارة
+      collegesData[university].forEach(college => {
+        const option = document.createElement('option');
+        option.value = college;
+        option.textContent = college;
+        collegeSelect.appendChild(option);
+      });
+    }
+    
+    // تحديث التخصصات أيضًا
+    updateMajors();
+  }
+  
+  // تحديث التخصصات بناءً على الكلية المختارة
+  function updateMajors() {
+    const universitySelect = document.getElementById('university');
+    const majorSelect = document.getElementById('major');
+    const university = universitySelect.value;
+    
+    // تفريغ قائمة التخصصات
+    majorSelect.innerHTML = '<option value="">اختر التخصص</option>';
+    
+    if (university && majorsData[university]) {
+      // إضافة التخصصات المتاحة للجامعة المختارة
+      majorsData[university].forEach(major => {
+        const option = document.createElement('option');
+        option.value = major;
+        option.textContent = major;
+        majorSelect.appendChild(option);
+      });
+    }
+  }
+  
+  // التعامل مع رفع شعار الجامعة
+  function handleUniversityLogoUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+      if (file.size > 2 * 1024 * 1024) {
+        showNotification('error', 'خطأ في الحجم', 'حجم شعار الجامعة يجب أن يكون أقل من 2MB');
+        return;
+      }
+      
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        uploadedUniversityLogo = e.target.result;
+        const preview = document.getElementById('previewUniversityLogo');
+        preview.src = uploadedUniversityLogo;
+        document.getElementById('universityLogoPreview').style.display = 'block';
+        showNotification('success', 'تم رفع الشعار', 'تم رفع شعار الجامعة بنجاح');
+      }
+      reader.readAsDataURL(file);
+    }
+  }
+  
+  // إزالة شعار الجامعة
+  function removeUniversityLogo() {
+    uploadedUniversityLogo = null;
+    document.getElementById('universityLogoPreview').style.display = 'none';
+    showNotification('info', 'تم الإزالة', 'تم إزالة شعار الجامعة');
+  }
+  
+  // التعامل مع رفع الصورة الشخصية
+  function handlePhotoUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        showNotification('error', 'خطأ في الحجم', 'حجم الصورة يجب أن يكون أقل من 5MB');
+        return;
+      }
+      
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        uploadedPhoto = e.target.result;
+        const preview = document.getElementById('previewImage');
+        preview.src = uploadedPhoto;
+        document.getElementById('uploadPreview').style.display = 'block';
+        showNotification('success', 'تم رفع الصورة', 'تم رفع الصورة الشخصية بنجاح');
+      }
+      reader.readAsDataURL(file);
+    }
+  }
+  
+  // إزالة الصورة الشخصية
+  function removePhoto() {
+    uploadedPhoto = null;
+    document.getElementById('uploadPreview').style.display = 'none';
+    document.getElementById('photoUpload').value = '';
+    showNotification('info', 'تم الإزالة', 'تم إزالة الصورة الشخصية');
+  }
+  
   // طلب سريع من العينة
   function quickOrderFromSample(designType) {
     selectDesign(designType);
@@ -3630,72 +4000,128 @@
   function openPreview(designType) {
     selectedDesign = designType;
     
+    // جمع البيانات من النموذج
+    const fullName = document.getElementById('fullName').value || "الاسم الكامل";
+    const englishName = document.getElementById('englishName').value || "English Name";
+    const universitySelect = document.getElementById('university');
+    const university = universitySelect.options[universitySelect.selectedIndex]?.text || "الجامعة";
+    const collegeSelect = document.getElementById('college');
+    const college = collegeSelect.options[collegeSelect.selectedIndex]?.text || "الكلية";
+    const majorSelect = document.getElementById('major');
+    const major = majorSelect.options[majorSelect.selectedIndex]?.text || "التخصص";
+    const studentId = document.getElementById('studentId').value || "123456789";
+    const academicYearSelect = document.getElementById('academicYear');
+    const academicYear = academicYearSelect.options[academicYearSelect.selectedIndex]?.text || "السنة الأولى";
+    
     // تحديث معاينة الهوية
     const previewContainer = document.getElementById('previewIdContainer');
     previewContainer.className = 'preview-id';
-    previewContainer.classList.add(designType);
     
-    // إنشاء معاينة الهوية
+    // الحصول على شعار الجامعة (مخصص أو افتراضي)
+    let logoUrl = uploadedUniversityLogo;
+    if (!logoUrl) {
+      const universityCode = document.getElementById('university').value;
+      logoUrl = universityLogos[universityCode] || universityLogos.default;
+    }
+    
+    // إنشاء معاينة الهوية بلون أسود
     previewContainer.innerHTML = `
       <div class="id-content" style="height: 100%; display: flex; flex-direction: column; padding: 20px; color: white;">
         <div class="id-header" style="display: flex; justify-content: space-between; align-items: flex-start;">
           <div>
-            <div class="id-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">هوية طالب جامعي</div>
+            <div class="id-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; color: white;">هوية طالب جامعي</div>
             <div class="id-detail">
-              <span class="id-label">الاسم:</span>
-              <span class="id-value">أحمد محمد</span>
+              <span class="id-label" style="color: rgba(255,255,255,0.9);">الاسم:</span>
+              <span class="id-value" style="color: rgba(255,255,255,0.8);">${fullName}</span>
             </div>
           </div>
-          <div class="id-logo" style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDBDNy4xNjQgMCAwIDcuMTY0IDAgMTZzNy4xNjQgMTYgMTYgMTZzMTYtNy4xNjN5IDE2LTE2UzI0LjgzNiAwIDE2IDB6IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjIiLz4KPHBhdGggZD0iTTE2IDhMMjQgMTZIMTZ2OEg4VjE2SDE2Vjh6IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjYiLz4KPC9zdmc+" alt="شعار">
+          <div class="id-logo" style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="${logoUrl}" alt="شعار الجامعة" style="width: 100%; height: 100%; object-fit: contain;">
           </div>
         </div>
         
         <div style="display: flex; flex: 1; align-items: center; margin: 15px 0;">
-          <div class="id-photo" style="width: 80px; height: 100px; background: rgba(255,255,255,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-left: 20px;">
-            <span style="font-size: 0.8rem;">صورة شخصية</span>
+          <div class="id-photo" style="width: 80px; height: 100px; background: rgba(255,255,255,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-left: 20px; overflow: hidden;">
+            ${uploadedPhoto ? 
+              `<img src="${uploadedPhoto}" alt="صورة شخصية" style="width: 100%; height: 100%; object-fit: cover;">` : 
+              '<span style="font-size: 0.8rem; color: rgba(255,255,255,0.8);">صورة شخصية</span>'}
           </div>
           <div class="id-details" style="flex: 1;">
             <div class="id-detail" style="margin-bottom: 8px;">
-              <span class="id-label">الجامعة:</span>
-              <span class="id-value">القدس المفتوحة</span>
+              <span class="id-label" style="color: rgba(255,255,255,0.9);">الجامعة:</span>
+              <span class="id-value" style="color: rgba(255,255,255,0.8);">${university}</span>
             </div>
             <div class="id-detail" style="margin-bottom: 8px;">
-              <span class="id-label">التخصص:</span>
-              <span class="id-value">هندسة الحاسب</span>
+              <span class="id-label" style="color: rgba(255,255,255,0.9);">الكلية:</span>
+              <span class="id-value" style="color: rgba(255,255,255,0.8);">${college}</span>
             </div>
             <div class="id-detail" style="margin-bottom: 8px;">
-              <span class="id-label">الرقم الجامعي:</span>
-              <span class="id-value">202410123</span>
+              <span class="id-label" style="color: rgba(255,255,255,0.9);">التخصص:</span>
+              <span class="id-value" style="color: rgba(255,255,255,0.8);">${major}</span>
+            </div>
+            <div class="id-detail" style="margin-bottom: 8px;">
+              <span class="id-label" style="color: rgba(255,255,255,0.9);">الرقم الجامعي:</span>
+              <span class="id-value" style="color: rgba(255,255,255,0.8);">${studentId}</span>
+            </div>
+            <div class="id-detail" style="margin-bottom: 8px;">
+              <span class="id-label" style="color: rgba(255,255,255,0.9);">السنة الدراسية:</span>
+              <span class="id-value" style="color: rgba(255,255,255,0.8);">${academicYear}</span>
             </div>
           </div>
         </div>
         
         <div class="id-footer" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 10px; font-size: 0.9rem;">
-          <span>سارية حتى: 2026/06/30</span>
-          <span>🇵🇸 PAL</span>
+          <span style="color: rgba(255,255,255,0.8);">${englishName}</span>
+          <span style="color: rgba(255,255,255,0.8);">🇵🇸 PAL</span>
         </div>
       </div>
     `;
+    
+    // حساب السعر
+    const designPrice = getDesignPrice(designType);
+    const printingSelect = document.getElementById('printingOption');
+    const printingOption = printingSelect.value;
+    const printingPrice = getPrintingPrice(printingOption);
+    const totalPrice = (designPrice + printingPrice) * currentQuantity;
     
     // تحديث تفاصيل المعاينة
     const previewDetails = document.getElementById('previewDetails');
     previewDetails.innerHTML = `
       <div class="detail-row">
+        <span class="detail-label">الاسم الكامل:</span>
+        <span class="detail-value">${fullName}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">الجامعة:</span>
+        <span class="detail-value">${university}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">التخصص:</span>
+        <span class="detail-value">${major}</span>
+      </div>
+      <div class="detail-row">
         <span class="detail-label">نوع التصميم:</span>
         <span class="detail-value">${getDesignName(designType)}</span>
       </div>
       <div class="detail-row">
-        <span class="detail-label">السعر:</span>
-        <span class="detail-value">${getDesignPrice(designType)} ₪</span>
+        <span class="detail-label">خدمة الطباعة:</span>
+        <span class="detail-value">${getPrintingName(printingOption)}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">سعر التصميم:</span>
+        <span class="detail-value">${designPrice} ₪</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">سعر الطباعة:</span>
+        <span class="detail-value">${printingPrice} ₪</span>
       </div>
       <div class="detail-row">
         <span class="detail-label">الكمية:</span>
         <span class="detail-value">${currentQuantity}</span>
       </div>
       <div class="detail-row">
-        <span class="detail-label">المجموع:</span>
-        <span class="detail-value">${getDesignPrice(designType) * currentQuantity} ₪</span>
+        <span class="detail-label">المجموع الكلي:</span>
+        <span class="detail-value" style="font-weight: bold; color: var(--primary-color); font-size: 1.1rem;">${totalPrice} ₪</span>
       </div>
     `;
     
@@ -3714,6 +4140,16 @@
     return prices[designType] || 40;
   }
   
+  function getPrintingPrice(printingOption) {
+    const prices = {
+      'none': 0,
+      'standard': 10,
+      'premium': 20,
+      'express': 30
+    };
+    return prices[printingOption] || 0;
+  }
+  
   // إغلاق المعاينة
   function closePreview() {
     document.getElementById('previewModal').style.display = 'none';
@@ -3723,12 +4159,20 @@
   function previewID() {
     const fullName = document.getElementById('fullName').value;
     const university = document.getElementById('university').value;
-    const major = document.getElementById('major').value;
-    const studentId = document.getElementById('studentId').value;
     const designType = document.getElementById('designType').value;
     
-    if (!fullName || !designType) {
-      showNotification('error', 'بيانات ناقصة', 'الرجاء ملء البيانات الأساسية واختيار التصميم');
+    if (!fullName) {
+      showNotification('error', 'بيانات ناقصة', 'الرجاء إدخال الاسم الكامل');
+      return;
+    }
+    
+    if (!university) {
+      showNotification('error', 'بيانات ناقصة', 'الرجاء اختيار الجامعة');
+      return;
+    }
+    
+    if (!designType) {
+      showNotification('error', 'بيانات ناقصة', 'الرجاء اختيار نوع التصميم');
       return;
     }
     
@@ -3787,7 +4231,6 @@
   function submitForm() {
     const fullName = document.getElementById('fullName').value;
     const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
     const university = document.getElementById('university').value;
     const designType = document.getElementById('designType').value;
     
@@ -3807,21 +4250,23 @@
         fullName: fullName,
         englishName: document.getElementById('englishName').value,
         university: document.getElementById('university').options[document.getElementById('university').selectedIndex].text,
-        college: document.getElementById('college').value,
-        major: document.getElementById('major').value,
+        college: document.getElementById('college').options[document.getElementById('college').selectedIndex]?.text || '',
+        major: document.getElementById('major').options[document.getElementById('major').selectedIndex]?.text || '',
         studentId: document.getElementById('studentId').value,
         academicYear: document.getElementById('academicYear').options[document.getElementById('academicYear').selectedIndex].text,
         phone: phone,
-        email: email,
+        email: document.getElementById('email').value,
         city: document.getElementById('city').options[document.getElementById('city').selectedIndex].text,
         designType: document.getElementById('designType').options[document.getElementById('designType').selectedIndex].text,
         printingOption: document.getElementById('printingOption').options[document.getElementById('printingOption').selectedIndex].text,
-        additionalNotes: document.getElementById('additionalNotes').value
+        additionalNotes: document.getElementById('additionalNotes').value,
+        hasCustomLogo: !!uploadedUniversityLogo
       };
       
       // إنشاء رسالة للواتساب
       let whatsappMessage = `طلب هوية رقمية مخصصة:
 الاسم: ${formData.fullName}
+الاسم بالإنجليزية: ${formData.englishName}
 الجامعة: ${formData.university}
 الكليّة: ${formData.college}
 التخصص: ${formData.major}
@@ -3832,6 +4277,7 @@
 المدينة: ${formData.city}
 نوع التصميم: ${formData.designType}
 خدمة الطباعة: ${formData.printingOption}
+شعار مخصص: ${formData.hasCustomLogo ? 'نعم' : 'لا'}
 الملاحظات: ${formData.additionalNotes}`;
       
       const whatsappUrl = `https://wa.me/970594365020?text=${encodeURIComponent(whatsappMessage)}`;
@@ -3859,8 +4305,7 @@
     
     // محاكاة الانتقال لصفحة الدفع
     setTimeout(() => {
-      // هنا يمكن إضافة رابط الدفع الفعلي
-      alert('سيتم إرسال رابط الدفع إلى هاتفك خلال دقائق');
+      submitForm();
     }, 1000);
   }
   
@@ -3872,27 +4317,24 @@
       inputs.forEach(input => {
         input.value = '';
       });
-      document.getElementById('uploadPreview').style.display = 'none';
-      showNotification('success', 'تم المسح', 'تم مسح جميع البيانات بنجاح');
-    }
-  }
-  
-  // التعامل مع رفع الصورة
-  function handlePhotoUpload(event) {
-    const file = event.target.files[0];
-    if (file) {
-      if (file.size > 5 * 1024 * 1024) {
-        showNotification('error', 'خطأ في الحجم', 'حجم الصورة يجب أن يكون أقل من 5MB');
-        return;
-      }
       
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        const preview = document.getElementById('previewImage');
-        preview.src = e.target.result;
-        document.getElementById('uploadPreview').style.display = 'block';
-      }
-      reader.readAsDataURL(file);
+      // إعادة تعيين الكليات والتخصصات
+      const collegeSelect = document.getElementById('college');
+      collegeSelect.innerHTML = '<option value="">اختر الكلية</option>';
+      
+      const majorSelect = document.getElementById('major');
+      majorSelect.innerHTML = '<option value="">اختر التخصص</option>';
+      
+      // إعادة تعيين الملفات المرفوعة
+      document.getElementById('uploadPreview').style.display = 'none';
+      document.getElementById('universityLogoPreview').style.display = 'none';
+      document.getElementById('photoUpload').value = '';
+      document.getElementById('universityLogoUpload').value = '';
+      
+      uploadedPhoto = null;
+      uploadedUniversityLogo = null;
+      
+      showNotification('success', 'تم المسح', 'تم مسح جميع البيانات بنجاح');
     }
   }
   
